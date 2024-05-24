@@ -1,4 +1,3 @@
-import Data.List (isPrefixOf)
 import Control.Monad (replicateM)
 
 commonPrefix :: String -> String -> String
@@ -9,8 +8,6 @@ solution input = do
     let suffixes = map (\(_, y) -> y) [splitAt i input | i <- [0..length input]]
     let commonPrefixes = map (\s -> commonPrefix s input) suffixes
     let sumOfLengths = foldr (\s acc -> acc + length s) 0 commonPrefixes
-    --print suffixes
-    --print commonPrefixes
     print sumOfLengths
 
 main :: IO ()
